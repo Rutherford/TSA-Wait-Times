@@ -8,7 +8,7 @@ from datetime import datetime
 import openai
 
 # Set your OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'YOUR_API_KEY'
 
 def format_tweet(wait_times):
     """
