@@ -1,0 +1,44 @@
+[Unit]
+Description=TSA Wait Times Twitter Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tsabot
+Group=tsabot
+WorkingDirectory=/opt/tsa-wait-times
+EnvironmentFile=/opt/tsa-wait-times/.env
+
+# Python virtual environment
+ExecStart=/opt/tsa-wait-times/venv/bin/python /opt/tsa-wait-times/time2wait.py
+
+# Restart policy
+Restart=always
+RestartSec=10s
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/tsa-wait-times
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictRealtime=true
+RestrictNamespaces=true
+RestrictAddressFamilies=AF_INET AF_INET6
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=tsa-bot
+
+# Resource limits
+LimitNOFILE=4096
+MemoryLimit=512M
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target

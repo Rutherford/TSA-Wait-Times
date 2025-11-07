@@ -1,0 +1,26 @@
+# TSA Wait Times Twitter Bot - Dependencies
+
+# Core Dependencies
+beautifulsoup4==4.12.3
+requests==2.31.0
+tweepy==4.14.0
+python-dotenv==1.0.1
+
+# HTTP/Network
+urllib3==2.2.1
+
+# Testing Dependencies (optional, for development)
+pytest==8.1.1
+pytest-cov==4.1.0
+pytest-mock==3.14.0
+responses==0.25.0
+
+# Code Quality (optional, for development)
+pylint==3.1.0
+black==24.3.0
+mypy==1.9.0
+flake8==7.0.0
+
+# Type Stubs
+types-requests==2.31.0.20240311
+types-beautifulsoup4==4.12.0.20240229
