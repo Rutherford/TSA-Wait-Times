@@ -1,0 +1,48 @@
+[MAIN]
+# Python code to execute, usually for sys.path manipulation
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+# Disable specific warnings
+disable=
+    C0111,  # missing-docstring (we use our own style)
+    C0103,  # invalid-name
+    R0913,  # too-many-arguments
+    W0703,  # broad-except (we handle this deliberately)
+
+[FORMAT]
+# Maximum number of characters on a single line
+max-line-length=120
+
+# Maximum number of lines in a module
+max-module-lines=1000
+
+[DESIGN]
+# Maximum number of arguments for function / method
+max-args=7
+
+# Maximum number of locals for function / method body
+max-locals=15
+
+# Maximum number of return / yield for function / method body
+max-returns=6
+
+# Maximum number of branch for function / method body
+max-branches=12
+
+# Maximum number of statements in function / method body
+max-statements=50
+
+[TYPECHECK]
+# Ignore missing imports for third-party modules
+ignored-modules=requests,tweepy,dotenv,bs4
+
+[SIMILARITIES]
+# Minimum lines number of a similarity
+min-similarity-lines=4
+
+# Ignore comments when computing similarities
+ignore-comments=yes
+
+# Ignore docstrings when computing similarities
+ignore-docstrings=yes
